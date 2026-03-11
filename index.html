@@ -44,16 +44,37 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
+        /* New Logo Container Styles */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 10px; /* Space between logo and text */
+        }
+
+        .nav-logo {
+            height: 40px; /* Scale logo to fit nav */
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column; /* Stack APNE and SOLUTIONS */
+            justify-content: center;
+            line-height: 1.1;
+        }
+
         nav .logo {
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--text-main);
-            text-decoration: none;
             letter-spacing: 1px;
+            text-transform: uppercase; /* Match logo style */
         }
 
         nav .logo span {
             color: var(--accent);
+            font-size: 0.9rem; /* Smaller subtext to match image */
         }
 
         nav ul {
@@ -172,7 +193,20 @@
             border: 1px solid var(--accent);
         }
 
-        /* About Section */
+        /* About Section Update */
+        #about img.about-avatar {
+            display: block;
+            margin: 0 auto 30px auto; /* Center avatar, add bottom space */
+            width: 150px; /* Profile avatar size */
+            height: 150px;
+            border-radius: 50%; /* Circular image */
+            border: 3px solid var(--accent); /* Add brand glow border */
+            box-shadow: 0 0 20px var(--accent-glow);
+            object-fit: contain; /* Ensure full logo is visible in circle */
+            background-color: #ffffff; /* White bg for vector logo visibility */
+            padding: 10px;
+        }
+
         #about p {
             max-width: 800px;
             margin: 0 auto;
@@ -212,10 +246,13 @@
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
-                padding: 20px;
+                padding: 10px;
+            }
+            .logo-container {
+                margin-bottom: 10px;
             }
             nav ul {
-                margin-top: 20px;
+                margin-top: 10px;
                 gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
@@ -229,7 +266,13 @@
 <body>
 
     <nav>
-        <a href="#home" class="logo">APNE<span>SOFTWARE SOLUTIONS</span></a>
+        <a href="#home" class="logo-container">
+            <img src="apne logo.jpeg" alt="APNE Logo" class="nav-logo">
+            <div class="logo-text">
+                <span class="logo">APNE</span>
+                <span class="logo"><span>SOFTWARE SOLUTIONS</span></span>
+            </div>
+        </a>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#products">Products</a></li>
@@ -246,6 +289,7 @@
 
     <section id="about">
         <h2>About <span>Me</span></h2>
+        <img src="self.png" alt="Neel Dhaygude - Founder" class="about-avatar">
         <p>Hi, I'm Neel Dhaygude, the founder of APNE SOFTWARE SOLUTIONS. I specialize in bridging the gap between complex AI logic and exciting user experiences. My focus is on creating proprietary, patented systems that solve real-world bottlenecks, from retail customization engines to workflow automation for enterprises. We don't just write code; we build business leverage.</p>
     </section>
 
