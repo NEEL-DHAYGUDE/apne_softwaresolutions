@@ -194,19 +194,18 @@
         }
 
         /* About Section Update */
+        /* About Section Update */
         #about img.about-avatar {
             display: block;
-            margin: 0 auto 30px auto; /* Center avatar, add bottom space */
-            width: 150px; /* Profile avatar size */
+            margin: 0 auto 30px auto; 
+            width: 150px; 
             height: 150px;
-            border-radius: 50%; /* Circular image */
-            border: 3px solid var(--accent); /* Add brand glow border */
+            border-radius: 50%; 
+            border: 3px solid var(--accent); 
             box-shadow: 0 0 20px var(--accent-glow);
-            object-fit: contain; /* Ensure full logo is visible in circle */
-            background-color: #ffffff; /* White bg for vector logo visibility */
-            padding: 10px;
+            object-fit: cover; /* This makes the image fill the entire circle */
+            object-position: center; /* This ensures the center of your photo is the focus */
         }
-
         #about p {
             max-width: 800px;
             margin: 0 auto;
