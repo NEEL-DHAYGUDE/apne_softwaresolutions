@@ -192,7 +192,51 @@
             margin-top: 15px;
             border: 1px solid var(--accent);
         }
+        /* Tie Ups Section */
+        #tie-ups {
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-color) 0%, var(--card-bg) 100%);
+        }
 
+        .tie-up-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .logo-box {
+            background: rgba(15, 23, 42, 0.5); /* Slightly darker box */
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 100px;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4), 0 0 10px var(--accent-glow);
+        }
+
+        .client-logo {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(200%) opacity(0.6); /* Makes logos silver/grey */
+            transition: filter 0.3s ease;
+        }
+
+        .logo-box:hover .client-logo {
+            filter: grayscale(0%) brightness(100%) opacity(1); /* Full color on hover */
+        }
         /* About Section Update */
         /* About Section Update */
         #about img.about-avatar {
@@ -275,6 +319,7 @@
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#products">Products</a></li>
+            <li><a href="#tie-ups">Tie Ups</a></li>
             <li><a href="#upcoming">The Lab</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -317,6 +362,16 @@
             </div>
         </div>
     </section>
+    <section id="tie-ups">
+        <h2>Current <span>Tie Ups</span></h2>
+        <p style="color: var(--text-muted); margin-bottom: 40px;">Trusted by growing brands and industry leaders.</p>
+        
+        <div class="tie-up-grid">
+            <div class="logo-box">
+                <img src="cch.jpeg" alt="Chennai Cake House" class="client-logo">
+            </div>
+        </div>
+    </section>
 
     <section id="upcoming">
         <h2>In <span>The Lab</span> (Upcoming)</h2>
@@ -333,7 +388,7 @@
         <h2>Let's <span>Connect</span></h2>
         <p>Ready to upgrade your business infrastructure? Reach out below.</p>
         <div class="contact-links">
-            <a href="mailto:neeldhaygude7@gmail.com">Email Me</a>
+            <a href="mailto:apnesoftwaresolutions@gmail.com">Email Me</a>
             <a href="https://www.linkedin.com/in/neel-dhaygude-083483274/" target="_blank">LinkedIn</a>
             <a href="https://www.instagram.com/apne_softwaresolutions/" target="_blank">Instagram</a>
         </div>
