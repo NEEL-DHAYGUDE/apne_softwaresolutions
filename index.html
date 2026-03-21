@@ -44,22 +44,21 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* New Logo Container Styles */
         .logo-container {
             display: flex;
             align-items: center;
             text-decoration: none;
-            gap: 10px; /* Space between logo and text */
+            gap: 10px;
         }
 
         .nav-logo {
-            height: 40px; /* Scale logo to fit nav */
+            height: 40px;
             width: auto;
         }
 
         .logo-text {
             display: flex;
-            flex-direction: column; /* Stack APNE and SOLUTIONS */
+            flex-direction: column;
             justify-content: center;
             line-height: 1.1;
         }
@@ -69,12 +68,12 @@
             font-weight: bold;
             color: var(--text-main);
             letter-spacing: 1px;
-            text-transform: uppercase; /* Match logo style */
+            text-transform: uppercase;
         }
 
         nav .logo span {
             color: var(--accent);
-            font-size: 0.9rem; /* Smaller subtext to match image */
+            font-size: 0.9rem;
         }
 
         nav ul {
@@ -142,6 +141,7 @@
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px var(--accent-glow);
+            display: inline-block;
         }
 
         .btn:hover {
@@ -149,12 +149,41 @@
             transform: translateY(-2px);
         }
 
-        /* Grid Layouts for Cards */
+        /* Image Circles (Shared for About and Founder) */
+        .circle-img {
+            display: block;
+            margin: 0 auto 30px auto; 
+            width: 150px; 
+            height: 150px;
+            border-radius: 50%; 
+            border: 3px solid var(--accent); 
+            box-shadow: 0 0 20px var(--accent-glow);
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Paragraphs in About/Founder */
+        #about p, #founder p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* Products Section */
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin: 40px 0 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 20px;
         }
 
         .card {
@@ -192,6 +221,7 @@
             margin-top: 15px;
             border: 1px solid var(--accent);
         }
+
         /* Tie Ups Section */
         #tie-ups {
             text-align: center;
@@ -208,7 +238,7 @@
         }
 
         .logo-box {
-            background: rgba(15, 23, 42, 0.5); /* Slightly darker box */
+            background: rgba(15, 23, 42, 0.5);
             padding: 20px;
             border-radius: 10px;
             border: 1px solid rgba(255,255,255,0.05);
@@ -230,32 +260,12 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            filter: grayscale(100%) brightness(200%) opacity(0.6); /* Makes logos silver/grey */
+            filter: grayscale(100%) brightness(200%) opacity(0.6);
             transition: filter 0.3s ease;
         }
 
         .logo-box:hover .client-logo {
-            filter: grayscale(0%) brightness(100%) opacity(1); /* Full color on hover */
-        }
-        /* About Section Update */
-        /* About Section Update */
-        #about img.about-avatar {
-            display: block;
-            margin: 0 auto 30px auto; 
-            width: 150px; 
-            height: 150px;
-            border-radius: 50%; 
-            border: 3px solid var(--accent); 
-            box-shadow: 0 0 20px var(--accent-glow);
-            object-fit: cover; /* This makes the image fill the entire circle */
-            object-position: center; /* This ensures the center of your photo is the focus */
-        }
-        #about p {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--text-muted);
+            filter: grayscale(0%) brightness(100%) opacity(1);
         }
 
         /* Contact Section */
@@ -318,6 +328,7 @@
         </a>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#founder">Founder</a></li>
             <li><a href="#products">Products</a></li>
             <li><a href="#tie-ups">Tie Ups</a></li>
             <li><a href="#upcoming">The Lab</a></li>
@@ -332,50 +343,67 @@
     </section>
 
     <section id="about">
-        <h2>About <span>Me</span></h2>
-        <img src="self.png.jpg" alt="Neel Dhaygude - Founder" class="about-avatar">
-        <p>Hi, I'm Neel Dhaygude, the founder of APNE SOFTWARE SOLUTIONS. I specialize in bridging the gap between complex AI logic and exciting user experiences. My focus is on creating proprietary, patented systems that solve real-world bottlenecks, from retail customization engines to workflow automation for enterprises. We don't just write code; we build business leverage.</p>
+        <h2>About <span>The Company</span></h2>
+        <img src="apne logo.jpeg" alt="APNE Logo" class="circle-img">
+        <p>APNE Software Solutions was born from a singular vision: to eliminate the operational drag that holds modern businesses back. What started as a dream startup has evolved into a hub for proprietary, high-leverage digital systems. We believe technology shouldn't just exist to look good; it should aggressively defend your time, automate your bottlenecks, and scale your revenue.</p>
+    </section>
+
+    <section id="founder">
+        <h2>The <span>Founder</span></h2>
+        <img src="self.png.jpg" alt="Neel Dhaygude - Founder" class="circle-img">
+        <p>Hi, I'm Neel Dhaygude. I specialize in bridging the gap between complex AI logic and frictionless user experiences. My focus is on architecting patented systems that solve real-world, high-stakes bottlenecks—from retail customization engines to workflow automation for massive enterprises. I don't just write code; I build business leverage.</p>
     </section>
 
     <section id="products">
         <h2>Deployed <span>Products & Services</span></h2>
+
+        <h3 class="category-title">APNE COMMUNICATE</h3>
         <div class="grid">
             <div class="card">
-                <h3>DEVSE: AI Cake Customization</h3>
-                <p>Stop guessing what customers want. DEVSE is an interactive 3D design tool that lets customers visually build their dream cakes. After a few orders, its AI learns their unique taste profile and automatically recommends personalized, premium designs directly to them.</p>
+                <h3>AutoApp: WhatsApp Automation</h3>
+                <p>While your competitors sleep, you could be qualifying high-ticket leads. What if you had a 24/7 digital receptionist that captures, filters, and tees up deals without dropping a single conversation?</p>
+                <span class="tag">24/7 Lead Capture</span>
+            </div>
+            <div class="card">
+                <h3>AMAIL: Email Automation</h3>
+                <p>Stop drowning in inbox noise. We built an intelligent digital gatekeeper that reads, filters, and responds to inquiries instantly, handing your team only the deals that actually matter.</p>
+                <span class="tag">Workflow Automation</span>
+            </div>
+        </div>
+
+        <h3 class="category-title">APNE RETAIL</h3>
+        <div class="grid">
+            <div class="card">
+                <h3>DEVSE: AI Customization</h3>
+                <p>What if your customers could visually build exactly what they want before ever speaking to you? Stop guessing. We turn endless WhatsApp messaging into guaranteed, high-ticket premium orders.</p>
                 <span class="tag">Patented Technology</span>
             </div>
             <div class="card">
-    <h3>AutoApp: WhatsApp Automation</h3>
-    <p>Stop losing high-ticket leads to missed messages. AutoApp acts as your 24/7 digital receptionist, instantly qualifying inbound inquiries on WhatsApp. It automatically handles initial FAQs, captures client requirements, and tees up warm leads so you only step in to close the deal.</p>
-    <span class="tag">24/7 Lead Capture</span>
-</div>
-            
+                <h3>UPYOG: Scrap E-Commerce</h3>
+                <p>Your household clutter is an untapped industrial asset. Upyog is the invisible bridge connecting forgotten local items directly to the buyers and scrapyards who need them most.</p>
+                <span class="tag">Instant Liquidation</span>
+            </div>
+        </div>
+
+        <h3 class="category-title">APNE ENTERPRISE</h3>
+        <div class="grid">
             <div class="card">
                 <h3>Nazar.ai: Proposal Validator</h3>
-                <p>Procurement is tough. Nazar.ai automates the tedious process of comparing massive vendor proposals against your strict company specs. It instantly flags discrepancies and generates a comprehensive report with qualitative and quantitative analysis.</p>
-                <span class="tag">Enterprise AI / Machine Learning</span>
+                <p>One millimeter of spec-drift can cost a construction firm millions. What if an AI engine could instantly scan massive vendor documents and catch the fatal discrepancies your team misses?</p>
+                <span class="tag">Automated Margin Insurance</span>
             </div>
-            
-            <div class="card">
-                <h3>AMAIL: Email Automation</h3>
-                <p>Never miss a warm lead again. AMAIL is a subject-based automated reply system that reads, categorizes, and responds to client inquiries 24/7. It handles spam filtration and logging so your team only focuses on what matters.</p>
-                <span class="tag">Workflow Automation</span>
-            </div>
-            
+        </div>
+
+        <h3 class="category-title">APNE EDUCATION</h3>
+        <div class="grid">
             <div class="card">
                 <h3>Adhyay: Intelligent Grader</h3>
-                <p>A smart answer sheet checker that reads both handwritten and typed exams. Unlike rigid grading software, Adhyay understands context and grades beyond a strict rubric, awarding marks to students who show true conceptual understanding.</p>
-                <span class="tag">A revolution for teachers and deserving students</span>
-            </div>
-            
-            <div class="card">
-                <h3>UPYOG: Scrap E-Commerce</h3>
-                <p>An e-commerce bridge for old items. Common households post their scrap and clutter, and local businesses like scrapyards or kabadivalas buy it directly. We automate the pricing, negotiation, and doorstep pickup routing.</p>
-                <span class="tag">Turn household clutter into instant cash</span>
+                <p>Grading shouldn't be a test of human endurance. Imagine a system that reads handwriting and grades students for true conceptual understanding, seeing beyond just rigid rubrics.</p>
+                <span class="tag">Academic Acceleration</span>
             </div>
         </div>
     </section>
+
     <section id="tie-ups">
         <h2>Current <span>Tie Ups</span></h2>
         <p style="color: var(--text-muted); margin-bottom: 40px;">Trusted by growing brands and industry leaders.</p>
@@ -392,15 +420,14 @@
         <div class="grid">
             <div class="card">
                 <h3>APNE: Bio-Decay Monitor</h3>
-                <p>A breakthrough in ambient healthcare technology. This system predicts and protects by offering zero-contact, real-time health intelligence.</p>
+                <p>A breakthrough in ambient healthcare technology. This system predicts and protects by offering zero-contact, real-time health intelligence using radio wave analysis.</p>
                 <span class="tag">Patent in Drafting</span>
             </div>
             <div class="card">
                 <h3>LIMITS AI</h3>
-                <p>A disciplining app thats sets goals and rewards enjoyment on completion</p>
+                <p>A disciplining system that sets strict goals and acts as the absolute gatekeeper to your digital enjoyment.</p>
                 <span class="tag">You are not ready for this</span>
             </div>
-            
         </div>
     </section>
 
