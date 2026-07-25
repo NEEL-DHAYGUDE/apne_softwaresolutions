@@ -140,7 +140,7 @@
             width: auto;
             border-radius: 6px;
             object-fit: contain;
-            flex-shrink: 0; /* Prevents text from squishing the logo */
+            flex-shrink: 0;
         }
         .logo-text {
             color: var(--text-main);
@@ -298,7 +298,7 @@
             opacity: 0.7;
             transition: all 0.3s ease;
             border-radius: 8px;
-            flex-shrink: 0; /* Prevents squishing */
+            flex-shrink: 0;
         }
         .client-logo:hover { 
             opacity: 1; 
@@ -403,6 +403,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
             margin-top: 40px;
+            margin-bottom: 60px; /* Added spacing below stats */
         }
         .stat-card {
             text-align: center;
@@ -425,6 +426,52 @@
             letter-spacing: 1px;
         }
 
+        /* --- SECURITY BANNER --- */
+        .security-banner {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(20, 20, 22, 0.6) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+        .security-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.05), transparent);
+            transition: left 0.7s ease;
+        }
+        .security-banner:hover::before { left: 200%; }
+        .security-icon {
+            font-size: 3rem;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--glow-tertiary);
+            width: 80px; height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            flex-shrink: 0;
+        }
+        .security-text h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+        .security-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
         /* --- FOUNDER --- */
         #founder .founder-content {
             display: flex;
@@ -442,7 +489,7 @@
             object-fit: cover;
             border: 3px solid rgba(255,255,255,0.1);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            flex-shrink: 0; /* Prevents text from squishing the image */
+            flex-shrink: 0;
         }
         .founder-text h3 {
             font-size: 2rem;
@@ -481,6 +528,7 @@
         @media (max-width: 900px) {
             #founder .founder-content { flex-direction: column; text-align: center; padding: 40px 20px;}
             .stats-grid { grid-template-columns: 1fr; }
+            .security-banner { flex-direction: column; text-align: center; padding: 30px 20px;}
             nav ul { display: none; }
             #hero h1 { font-size: 2.8rem; }
         }
@@ -503,7 +551,6 @@
     <!-- Navigation -->
     <nav id="navbar">
         <a href="#hero" class="logo-container cursor-hover-target">
-            <!-- Space converted to %20 to prevent broken links -->
             <img src="apne%20logo.jpeg" alt="APNE Logo" class="nav-logo">
             <div class="logo-text">APNE</div>
         </a>
@@ -648,12 +695,13 @@
         </div>
     </section>
 
-    <!-- Why APNE / Statistics -->
+    <!-- Why APNE / Statistics & Security -->
     <section id="how-we-work" class="reveal">
         <div class="section-header">
             <h2>The APNE Standard</h2>
             <p class="section-desc">Technology shouldn't just look good. It must aggressively defend your time and scale your margins.</p>
         </div>
+        
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-number">90%</div>
@@ -666,6 +714,15 @@
             <div class="stat-card">
                 <div class="stat-number">Zero</div>
                 <div class="stat-label">Compromise on Accuracy</div>
+            </div>
+        </div>
+
+        <!-- NEW SECURITY DECLARATION -->
+        <div class="security-banner cursor-hover-target">
+            <div class="security-icon">🔒</div>
+            <div class="security-text">
+                <h3>Enterprise Security & Data Sovereignty</h3>
+                <p>At APNE Software Solutions, your data privacy is our baseline. Our AI infrastructure operates on strict <strong>zero-retention protocols</strong>. We do not store, log, train on, or monetize your proprietary business data, passwords, or customer interactions. Every deployment is strictly transient, encrypted, and completely private.</p>
             </div>
         </div>
     </section>
