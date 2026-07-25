@@ -140,6 +140,7 @@
             width: auto;
             border-radius: 6px;
             object-fit: contain;
+            flex-shrink: 0; /* Prevents text from squishing the logo */
         }
         .logo-text {
             color: var(--text-main);
@@ -295,13 +296,12 @@
             height: 65px; 
             object-fit: contain;
             opacity: 0.7;
-            filter: grayscale(100%);
             transition: all 0.3s ease;
             border-radius: 8px;
+            flex-shrink: 0; /* Prevents squishing */
         }
         .client-logo:hover { 
             opacity: 1; 
-            filter: grayscale(0%);
         }
 
         /* --- GLASSMORPHISM CARDS (PRODUCTS) --- */
@@ -442,6 +442,7 @@
             object-fit: cover;
             border: 3px solid rgba(255,255,255,0.1);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            flex-shrink: 0; /* Prevents text from squishing the image */
         }
         .founder-text h3 {
             font-size: 2rem;
@@ -502,7 +503,8 @@
     <!-- Navigation -->
     <nav id="navbar">
         <a href="#hero" class="logo-container cursor-hover-target">
-            <img src="apne logo.jpeg" alt="APNE Logo" class="nav-logo">
+            <!-- Space converted to %20 to prevent broken links -->
+            <img src="apne%20logo.jpeg" alt="APNE Logo" class="nav-logo">
             <div class="logo-text">APNE</div>
         </a>
         <ul>
